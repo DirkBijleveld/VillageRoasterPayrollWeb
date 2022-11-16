@@ -1,10 +1,14 @@
 from fastapi import FastAPI
 
 from app.database.database import Base, engine
-from app.routers import database
+from app.routers.database import employee, location, role
 
 app = FastAPI()
-app.include_router(database.router, prefix="/database", tags=["database"])
+
+app.include_router(location.router)
+app.include_router(employee.router)
+app.include_router(role.router)
+
 
 Base.metadata.create_all(bind=engine)
 
