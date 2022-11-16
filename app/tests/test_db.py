@@ -104,6 +104,9 @@ def fake_employee_1(fake_location_1) -> Response:
 
 @fixture
 def fake_employee_2(fake_location_2) -> Response:
+    """
+    Creates a second Employee in the database, and returns a TestClient response object.
+    """
     yield client.post(
         "/database/employee/create",
         json={
@@ -116,8 +119,6 @@ def fake_employee_2(fake_location_2) -> Response:
 def test_create_location(test_db):
     """
     Tests Location creation. Does NOT use fake_location_1 fixture.
-    :param test_db:
-    :return:
     """
     response = client.post(
         "/database/location/create",
