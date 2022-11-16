@@ -93,6 +93,9 @@ def fake_role(fake_location_1) -> Response:
 
 @fixture
 def fake_employee_1(fake_location_1) -> Response:
+    """
+    Creates an Employee in the database, and returns a TestClient response object.
+    """
     yield client.post(
         "/database/employee/create",
         json={
