@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+from requests import Response
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -13,19 +14,30 @@ from app.models.roles import Role
 from app.models.locations import Location
 from app.models.employees import Employee
 
+# This is to remove import errors in PyCharm
+# It performs no other purpose
+if __name__ == "__main__":
+    assert (Role, Location, Employee) is not None
+
+
+# Testing uses in-memory SQLite database
 SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
 
+# Create a test database
 engine = create_engine(
     SQLALCHEMY_DATABASE_URI,
     connect_args={"check_same_thread": False},
     poolclass=StaticPool,
 )
-TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base.metadata.create_all(bind=engine)
+# SessionLocal is instantiated to create a database session
+TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 def override_get_db():
+    """
+    Overrides get_db() dependency to use the TestingSessionLocal
+    """
     db = TestingSessionLocal()
     try:
         yield db
@@ -42,23 +54,37 @@ client = TestClient(app)
 
 @fixture
 def test_db():
+    """
+    Ensures that every test that uses the test_db fixture has a clean database.
+    This + the in-memory SQLite database ensures that tests are independent of each other,
+    and that they do not touch production.
+    """
     Base.metadata.create_all(bind=engine)
     yield
     Base.metadata.drop_all(bind=engine)
 
 
 @fixture
-def fake_location_1(test_db):
+def fake_location_1(test_db) -> Response:
+    """
+    Creates a Location in the database, and returns a TestClient response object.
+    """
     yield client.post("/database/location/create", json={"slug": "test-slug-1"})
 
 
 @fixture
-def fake_location_2(test_db):
+def fake_location_2(test_db) -> Response:
+    """
+    Creates a Location in the database, and returns a TestClient response object.
+    """
     yield client.post("/database/location/create", json={"slug": "test-slug-2"})
 
 
 @fixture
-def fake_role(fake_location_1):
+def fake_role(fake_location_1) -> Response:
+    """
+    Creates a Role in the database, and returns a TestClient response object.
+    """
     yield client.post(
         "/database/roles/create",
         json={"name": "test-role", "location_id": fake_location_1.json()["id"]},
@@ -66,7 +92,7 @@ def fake_role(fake_location_1):
 
 
 @fixture
-def fake_employee_1(fake_location_1):
+def fake_employee_1(fake_location_1) -> Response:
     yield client.post(
         "/database/employee/create",
         json={
@@ -77,7 +103,7 @@ def fake_employee_1(fake_location_1):
 
 
 @fixture
-def fake_employee_2(fake_location_2):
+def fake_employee_2(fake_location_2) -> Response:
     yield client.post(
         "/database/employee/create",
         json={
