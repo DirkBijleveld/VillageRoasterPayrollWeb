@@ -2,12 +2,15 @@ from fastapi import FastAPI
 
 from app.database.database import Base, engine
 from app.routers.database import employee, location, role
+from app.routers.upload import upload
 
 app = FastAPI()
 
 app.include_router(location.router)
 app.include_router(employee.router)
 app.include_router(role.router)
+
+app.include_router(upload.router)
 
 
 Base.metadata.create_all(bind=engine)

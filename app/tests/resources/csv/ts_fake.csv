@@ -1,0 +1,22 @@
+Village Roaster
+Payroll Period,01/01/1977 To 01/14/1977
+"",""
+Name,Clock in date,Clock in time,Clock out date,Clock out time,Break start,Break end,Break length,Break type,Payroll ID,Role,Wage,Scheduled,Actual vs. Scheduled,Total Paid,Regular,Unpaid Breaks,Est. Overtime,Est. Wages,Cash Tips,Issues,No Show Reason,Employee Note,Manager Note
+Test1,January 1 1977,8:00am,January 1 1977,5:00pm,January 1 1977,1:00pm,4:00,Unpaid Break,1,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test2,January 1 1977,8:00am,January 1 1977,5:00pm,January 1 1977,1:00pm,4:00,Unpaid Break,2,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test3,January 1 1977,8:00am,January 1 1977,5:00pm,January 1 1977,1:00pm,4:00,Unpaid Break,3,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test4,January 1 1977,8:00am,January 1 1977,5:00pm,January 1 1977,1:00pm,4:00,Unpaid Break,4,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test5,January 1 1977,8:00am,January 1 1977,5:00pm,January 1 1977,1:00pm,4:00,Unpaid Break,5,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test6,January 1 1977,8:00am,January 1 1977,5:00pm,January 1 1977,1:00pm,4:00,Unpaid Break,6,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test7,January 1 1977,8:00am,January 1 1977,5:00pm,January 1 1977,1:00pm,4:00,Unpaid Break,7,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test1,January 2 1977,8:00am,January 2 1977,5:00pm,January 2 1977,1:00pm,4:00,Unpaid Break,1,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test2,January 2 1977,8:00am,January 2 1977,5:00pm,January 2 1977,1:00pm,4:00,Unpaid Break,2,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test3,January 2 1977,8:00am,January 2 1977,5:00pm,January 2 1977,1:00pm,4:00,Unpaid Break,3,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+"","","","","","","","","","","","","","","","","","","","","","","",""
+Test4,January 2 1977,8:00am,January 2 1977,5:00pm,January 2 1977,1:00pm,4:00,Unpaid Break,4,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test5,January 2 1977,8:00am,January 2 1977,5:00pm,January 2 1977,1:00pm,4:00,Unpaid Break,5,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test6,January 2 1977,8:00am,January 2 1977,5:00pm,January 2 1977,1:00pm,4:00,Unpaid Break,6,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test7,January 2 1977,8:00am,January 2 1977,5:00pm,January 2 1977,1:00pm,4:00,Unpaid Break,7,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test1,January 3 1977,8:00am,January 3 1977,5:00pm,January 3 1977,1:00pm,4:00,Unpaid Break,1,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test2,January 3 1977,8:00am,January 3 1977,5:00pm,January 3 1977,1:00pm,4:00,Unpaid Break,2,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""
+Test3,January 3 1977,8:00am,January 3 1977,5:00pm,January 3 1977,1:00pm,4:00,Unpaid Break,3,Employee,10.00,8:00am,0:00,0.00,8:00,0:00,0:00,0.00,0.00,0.00,"","",""

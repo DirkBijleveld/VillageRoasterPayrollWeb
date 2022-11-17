@@ -7,7 +7,7 @@ from app.schemas.employees import EmployeeSchema
 
 router = APIRouter(prefix="/db/employees", tags=["employees"])
 
-
+# GET Requests
 @router.get("/")
 async def get_employees(session=Depends(get_db)):
     return db_emp.get_employees(session)
@@ -18,6 +18,7 @@ async def get_employee(employee_id: int, session=Depends(get_db)):
     return db_emp.get_employee(session, employee_id)
 
 
+# POST Requests
 @router.post("/create")
 async def create_employee(employee: EmployeeSchema, session=Depends(get_db)):
     return db_emp.make_employee(session, employee)

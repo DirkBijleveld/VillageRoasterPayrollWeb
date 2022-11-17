@@ -8,6 +8,7 @@ from app.schemas.roles import RoleSchema
 router = APIRouter(prefix="/db/roles", tags=["roles"])
 
 
+# GET Requests
 @router.get("/")
 async def get_roles(session=Depends(get_db)):
     return db_role.get_roles(session)
@@ -18,6 +19,7 @@ async def get_role(role_id: int, session=Depends(get_db)):
     return db_role.get_role(session, role_id)
 
 
+# POST Requests
 @router.post("/create")
 async def create_role(role: RoleSchema, session=Depends(get_db)):
     return db_role.make_role(session, role)
