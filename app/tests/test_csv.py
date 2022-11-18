@@ -1,3 +1,4 @@
+from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -10,7 +11,8 @@ from app.csv.csv import (
     read_file,
     clean_blanks,
     clean_excess_headers,
-    clean_empty_shifts, clean_types,
+    clean_empty_shifts,
+    clean_types,
 )
 
 param = mark.parametrize
@@ -102,16 +104,16 @@ def test_clean_types(df: pd.DataFrame, request):
     df = clean_excess_headers(df)
     df = clean_empty_shifts(df)
     df = clean_types(df)
-    assert df["Name"].dtype == "str"
-    assert df["Payroll ID"].dtype == "int"
+    assert df["Name"].dtype == "string"
+    assert df["Payroll ID"].dtype == "int64"
     assert df["Clock in datetime"].dtype == "datetime64[ns]"
     assert df["Clock out datetime"].dtype == "datetime64[ns]"
     assert df["Break start"].dtype == "datetime64[ns]"
     assert df["Break end"].dtype == "datetime64[ns]"
-    assert df["Role"].dtype == "str"
-    assert df["Wage"].dtype == "int"
-    assert df["Scheduled"].dtype == "int"
-    assert df["Issues"].dtype == "str"
-    assert df["Employee Note"].dtype == "str"
-    assert df["Manager Note"].dtype == "str"
+    assert df["Role"].dtype == "string"
+    assert df["Wage"].dtype == "int64"
+    assert df["Scheduled"].dtype == "int64"
+    assert df["Issues"].dtype == "string"
+    assert df["Employee Note"].dtype == "string"
+    assert df["Manager Note"].dtype == "string"
     assert df["Break paid"].dtype == "bool"
